@@ -4,8 +4,5 @@
       "path": "/api/cron/generate-predictions",
       "schedule": "0 6 * * *"
     }
-  ],
-  "functions": {
-    "app/api/cron/generate-predictions/route.ts": { "maxDuration": 60 }
-  }
+  ]
 }
