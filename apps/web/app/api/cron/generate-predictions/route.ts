@@ -5,10 +5,11 @@ import { generateDailyPredictions } from "@/lib/ai/prediction-engine";
 import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
-// Allow up to 5 minutes so backfill runs (per-fixture delay for rate limits)
-// can complete. Vercel Pro plan supports this; Hobby caps at 60s — adjust
-// `perFixtureDelayMs` accordingly if you stay on Hobby.
-export const maxDuration = 300;
+// Vercel Hobby plan caps at 60s per invocation. Stay under by:
+// - capping maxFixtures to ~5 per run
+// - keeping perFixtureDelayMs low (or 0) on the free tier
+// On Pro plan you can raise this to 300 + use longer delays for rate-limit safety.
+export const maxDuration = 60;
 
 const log = logger.child({ component: "cron/generate-predictions" });
 
