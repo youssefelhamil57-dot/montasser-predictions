@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Montasser — Batman / Gotham noir theme.
+ * Deep blacks, bat-signal yellow accent, steel slate.
+ */
+@layer base {
+  :root {
+    --background: 220 15% 4%;
+    --foreground: 45 25% 96%;
+
+    --card: 220 13% 9%;
+    --card-foreground: 45 25% 96%;
+    --popover: 220 13% 9%;
+    --popover-foreground: 45 25% 96%;
+
+    --primary: 45 95% 55%;             /* bat-signal yellow */
+    --primary-foreground: 220 30% 6%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 45 25% 96%;
+    --accent: 45 95% 55%;
+    --accent-foreground: 220 30% 6%;
+
+    --muted: 220 13% 12%;
+    --muted-foreground: 220 10% 60%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 16%;
+    --input: 220 13% 16%;
+    --ring: 45 95% 55%;
+    --radius: 0.375rem;
+  }
+
+  .dark, :root { /* dark = default */
+    --background: 220 15% 4%;
+    --foreground: 45 25% 96%;
+
+    --card: 220 13% 9%;
+    --card-foreground: 45 25% 96%;
+    --popover: 220 13% 9%;
+    --popover-foreground: 45 25% 96%;
+
+    --primary: 45 95% 55%;
+    --primary-foreground: 220 30% 6%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 45 25% 96%;
+    --accent: 45 95% 55%;
+    --accent-foreground: 220 30% 6%;
+
+    --muted: 220 13% 12%;
+    --muted-foreground: 220 10% 60%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 16%;
+    --input: 220 13% 16%;
+    --ring: 45 95% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(ellipse at top, hsl(45 95% 55% / 0.05), transparent 60%),
+      radial-gradient(ellipse at bottom, hsl(220 30% 10% / 0.7), transparent 70%);
+    background-attachment: fixed;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+
+  /* Heroic display heading — Anton, bold uppercase, tight tracking */
+  .font-display {
+    font-family: var(--font-display), "Anton", "Bebas Neue", "Impact", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Gold gradient text for the brand */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(45 95% 65%), hsl(45 100% 50%) 50%, hsl(40 90% 45%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Bat-signal glow effect */
+  .bat-glow {
+    filter: drop-shadow(0 0 12px hsl(45 95% 55% / 0.4));
+  }
+
+  /* Diagonal noir stripes — premium/locked card accent */
+  .noir-stripes {
+    background-image: repeating-linear-gradient(
+      135deg,
+      hsl(45 95% 55% / 0.05) 0,
+      hsl(45 95% 55% / 0.05) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+  }
+}

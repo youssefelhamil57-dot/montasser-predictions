@@ -1,0 +1,11 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/generate-predictions",
+      "schedule": "0 */2 * * *"
+    }
+  ],
+  "functions": {
+    "app/api/cron/generate-predictions/route.ts": { "maxDuration": 60 }
+  }
+}

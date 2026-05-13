@@ -1,0 +1,6 @@
+{
+  "name": "@affiliateai/database",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Postgres schema and migrations for AffiliateAI Pro (applied via Supabase)."
+}

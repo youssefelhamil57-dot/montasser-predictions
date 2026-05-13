@@ -1,0 +1,18 @@
+{
+  "name": "affiliateai-pro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI sports predictions SaaS with integrated 1xBet affiliate tracking.",
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "start": "npm --prefix apps/web run start",
+    "lint": "npm --prefix apps/web run lint",
+    "typecheck": "npm --prefix apps/web run typecheck",
+    "test": "npm --prefix apps/web run test",
+    "install:all": "npm --prefix apps/web install"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
